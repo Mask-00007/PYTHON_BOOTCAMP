@@ -95,3 +95,87 @@ scores = [85, 90, 78]
 
 d = {name: score for name, score in zip(names, scores)}
 print(d)
+
+print("-------------------------------------")
+
+# ! Loop Over Methods :-
+# ? keys(), values(), items(), get(key, alt_value), setdefault(key, alt_value)
+
+d1 = {1: "One", 2: "two", 3: "three"}
+
+for x in d1.keys():
+    print("Keys: ", x)
+
+print("-------------------------------------")
+
+for y in d1.values():
+    print("Values: ", y)
+
+print("-------------------------------------")
+
+for x, y in d1.items():
+    print(x, y)
+
+print("-------------------------------------")
+
+print(
+    d1.setdefault(5)
+)  # It will assign new entry to the  dictionary key as 5 and value as None.
+print(d1)  # It will print the updated dictionary.
+
+print("-------------------------------------")
+
+# ! Dictionary Methods :-
+# ? update(), fromkeys(sequence, default), copy() , pop(key, alt_value), popitem(), clear()
+
+# ? update() :
+# Existing keys are updated.
+# New keys are added.
+d = {"a": 10, "b": 20}
+
+d.update({"b": 99, "c": 30})
+print(d)
+
+print("-------------------------------------")
+
+# ? fromkeys(sequence, default) :
+# Original dictionary is not required.
+# Creates a new dictionary.
+keys = ["name", "age", "city"]
+
+d = dict.fromkeys(keys, "Not Given")
+print(d)
+
+print("-------------------------------------")
+
+# ? copy() :
+d1 = {"a": 10, "b": 20}
+
+d2 = d1.copy()
+print(d2)
+
+print("-------------------------------------")
+
+# ? pop(key, alt_value) :
+# Prevents KeyError if key doesn't exist.
+d = {"a": 10, "b": 20, "c": 30}
+
+x = d.pop("b")
+print(x)
+print(d)
+
+
+d = {"a": 10, "b": 20}
+
+x = d.pop("z", "Key Not Found")
+print(x)
+
+print("-------------------------------------")
+
+# ? popitem() : Removes and returns the last inserted key-value pair.
+# Follows LIFO (Last In First Out) in Python 3.7+
+d = {"a": 10, "b": 20, "c": 30}
+
+x = d.popitem()
+print(x)
+print(d)
